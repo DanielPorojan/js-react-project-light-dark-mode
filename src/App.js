@@ -4,10 +4,16 @@ import Main from "./components/Main";
 
 
 function Page(){
+    const [darkMode, setDarkMode] = React.useState(true)
+
+    function toggleDarkMode(){
+        setDarkMode(prevDarkMode => !prevDarkMode)
+    }
+
     return(
-        <div className="conatiner">
-            <Navbar/>
-            <Main/>
+        <div className="container">
+            <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
+            <Main darkMode={darkMode}/>
         </div>
     )
 }
